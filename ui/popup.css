@@ -1,0 +1,57 @@
+.container {
+  width: 280px;
+  height: 240px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+#input {
+  border: 1px solid #aaa;
+  outline: none !important;
+  padding: 8px 12px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#addbtn {
+  background: rgb(3, 103, 185);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.url-list {
+  border-left: 1px solid #aaa;
+  height: 100%;
+  padding: 0 8px;
+  margin: 8px 0;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.url {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.url span {
+  font-size: 16px;
+}
+
+.url button {
+  border: none;
+  border-radius: 3px;
+  background: #ff1616;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+}

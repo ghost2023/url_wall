@@ -1,12 +1,9 @@
-chrome.tabs.onUpdated.addListener((tabId, tab) => {
-    if (tab.url && tab.url.includes("youtube.com/watch")) {
-      const queryParameters = tab.url.split("?")[1];
-      const urlParameters = new URLSearchParams(queryParameters);
-  
-      chrome.tabs.sendMessage(tabId, {
-        type: "NEW",
-        videoId: urlParameters.get("v"),
-      });
+chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
+  let urls = (await chrome.storage.local.get("urls")).urls ?? [];
+  for (let u of urls) {
+    if (tab.url.includes(u)) {
+      chrome.tabs.remove(tabId);
+      break;
     }
-  });
-  
+  }
+});
